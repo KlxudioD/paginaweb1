@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="iconos/fontawesome-free-6.7.2-web/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <title>prroyecto_pasteleria</title>
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="contenedor_encabezado">
+            <div class="contenido_encabezado">
+                <div class="logo">
+                    <a href=""><img src="assets/logo.png" alt=""></a>
+                </div>
+                <div class="carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="carrito-numero">0</span>
+                </div>
+                <nav class="menu ocultar">
+                    <a href="#servicios">Servicios</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#clientes">Clientes</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="menu_hamburguesa">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="modal-carrito" class="modal">
+        <div class="modal-contenido">
+            <span id="cerrar-carrito" class="cerrar">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="productos-carrito"></div>
+            <p id="total-carrito">Total: $0</p>
+            <button id="btn-pagar">Pagar</button>
+
+        </div>
+    </div>
+
+
+    <div id="modal-pago" class="modal">
+        <div class="modal-contenido">
+            <span id="cerrar-pago" class="cerrar">&times;</span>
+            <h2>Formulario de Pago</h2>
+            <form id="form-pago">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required placeholder="Ejemplo : Costanera 1530">
+                <label for="metodo">Método de pago:</label>
+                <select id="metodo" name="metodo" required>
+                    <option value="tarjeta">Tarjeta de crédito</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <button type="submit">Confirmar Pago</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="presentacion" id=presentacion>
+        <div class="presentacion_contenido">
+            <h1>Le Maison Sucrée </h1>
+            <p>Bienvenidos a Le Maison Sucrée, un lugar donde la dulzura se encuentra con la elegancia.
+                En nuestra pastelería, cada creación es una obra de arte, elaborada con ingredientes
+                frescos y de la más alta calidad. Nos especializamos en pasteles finos, delicados y llenos
+                de sabor, perfectos para cualquier ocasión especial. Ya sea que busques un pastel sofisticado
+                para un evento importante o un pequeño deleite para disfrutar en cualquier momento, en Le Maison
+                Sucrée encontrarás algo que hará que tu día sea aún más dulce. Ven a disfrutar de la magia de
+                la pastelería francesa en un ambiente cálido y acogedor.
+            </p>
+            <div class="presentacion_boton">
+                <a href="#contacto"><button>Conocenos!!!</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="servicios" id="servicios">
+        <div class="servicios_titulo">
+            <h2>Nuestros servicios</h2>
+        </div>
+        <div class="servicios_contenido1">
+            <div class="servicio1">
+                <img src="assets/servicios/sericio_pasteleria.jpg" alt="">
+                <p>Pasteleria</p>
+                <p>“Deliciosos pasteles para cualquier ocasión especial.”</p>
+                <button>+ Info</button>
+            </div>
+            <div class="servicio1">
+                <img src="assets/servicios/servicio_catering.jpg" alt="">
+                <p>Servicio de catering</p>
+                <p>“Endulza tu evento con nuestros exquisitos postres y pasteles.”</p>
+                <button>+ Info</button>
+            </div>
+            <div class="servicio1">
+                <img src="assets/servicios/servicio__delivery.jpg" alt="">
+                <p>Compra online / Despacho</p>
+                <p> “Recibe nuestros deliciosos pasteles en la puerta de tu hogar.”</p>
+                <button>+ Info</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="productos" id="productos">
+        <h2>Productos</h2>
+        <div class="botones_productos">
+            <button class="tortas">Tortas</button>
+            <button class="pasteles">Pasteles</button>
+            <button class="helados">Helados</button>
+            <button class="todos">Todos</button>
+        </div>
+
+        <div class="productos_contenedor">
+
+            <!-- seccioin tortas -->
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_cookiesAndCream.png" alt="torta1">
+                <p class="nombre-producto">Torta de Cokies and Cream</p>
+                <p class="precio-producto">Valor: $15.500</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_lucumaManjar.png" alt="torta2">
+                <p class="nombre-producto">Torta de Lucuma / Manjar</p>
+                <p class="precio-producto">Valor: $18.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_Maracuya.jpg" alt="torta3">
+                <p class="nombre-producto">Torta de Maracuya</p>
+                <p class="precio-producto">Valor: $12.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_marmolada.png" alt="torta4">
+                <p class="nombre-producto">Torta Marmolada</p>
+                <p class="precio-producto">Valor: $24.700</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_milHojasTropical.jpg" alt="torta5">
+                <p class="nombre-producto">Torta Mil hojas tropical</p>
+                <p class="precio-producto">Valor: $15.300</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_panquequeNaranja.jpg" alt="torta6">
+                <p class="nombre-producto">Torta Panqueque Naranja</p>
+                <p class="precio-producto">Valor: $15.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_snicker.png" alt="torta6">
+                <p class="nombre-producto">Torta Snicker</p>
+                <p class="precio-producto">Valor: $30.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="torta">
+                <img src="assets/tortas/torta_tresLeches.png" alt="torta6">
+                <p class="nombre-producto">Torta Tres Leches</p>
+                <p class="precio-producto">Valor: $10.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <!-- seccioin Pasteles -->
+
+            <div class="productos_tienda" data-productos="pasteles">
+                <img src="assets/pasteles/pastel_pieDeLimon.jpg" alt="pastel1">
+                <p class="nombre-producto">Pie de Limon</p>
+                <p class="precio-producto">Valor: $4.500</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="pasteles">
+                <img src="assets/pasteles/pastel_tresLeches.jpg" alt="pastel2">
+                <p class="nombre-producto">Tres leches</p>
+                <p class="precio-producto">Valor: $5.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="pasteles">
+                <img src="assets/pasteles/pasteles_alfajores.png" alt="pastel3">
+                <p class="nombre-producto">Alfajores</p>
+                <p class="precio-producto">Valor: $2.500</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="pasteles">
+                <img src="assets/pasteles/pasteles_cachitos.jpg" alt="pastel4">
+                <p class="nombre-producto">Cachitos</p>
+                <p class="precio-producto">Valor: $2.500</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="pasteles">
+                <img src="assets/pasteles/pasteles_kuchenNuez.jpg" alt="pastel5">
+                <p class="nombre-producto">Kuchent de Nuez</p>
+                <p class="precio-producto">Valor: $13.700</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <!-- seccion helados -->
+
+            <div class="productos_tienda" data-productos="helados">
+                <img src="assets/helados/helado_chocolate.jpg" alt="helado1">
+                <p class="nombre-producto">Copa de helado sabor Chocolate</p>
+                <p class="precio-producto">Valor: $10.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="helados">
+                <img src="assets/helados/helado_lucuma.jpg" alt="helado2">
+                <p class="nombre-producto">Copa de helado sabor Lucuma</p>
+                <p class="precio-producto">Valor: $12.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="helados">
+                <img src="assets/helados/helado_lucuma_manjar.jpg" alt="helado3">
+                <p class="nombre-producto">Copa de helado sabor Lucuma / Manjar</p>
+                <p class="precio-producto">Valor: $11.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="helados">
+                <img src="assets/helados/helado_torta___chocolate.png" alt="helado3">
+                <p class="nombre-producto">Torta fria de Chocolate</p>
+                <p class="precio-producto">Valor: $10.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="helados">
+                <img src="assets/helados/helado_torta_frambueza.png" alt="helado4">
+                <p class="nombre-producto">Torta fria de Frambuesa</p>
+                <p class="precio-producto">Valor: $15.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="helados">
+                <img src="assets/helados/helado_torta_lucuma.png" alt="helado5">
+                <p class="nombre-producto">Torta fria de Luccuma</p>
+                <p class="precio-producto">Valor: $16.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+
+            <div class="productos_tienda" data-productos="helados">
+                <img src="assets/helados/helado_torta_vainilla.png" alt="helado6">
+                <p class="nombre-producto">Torta fria de Vainilla</p>
+                <p class="precio-producto">Valor: $20.000</p>
+                <div class="bbtn_agregar">
+                    <button type="submit">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clientes" id="clientes">
+        <div id="carouselExampleIndicators" class="carousel slide">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="cliente-testimonio">
+                        <img src="/assets/clientes/cliente_1.jfif" alt="agente1" />
+                        <h4>Camila R.</h4>
+                        <p>"Las tortas más ricas que he probado. El equilibrio perfecto entre dulzura y textura".</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="cliente-testimonio">
+                        <img src="/assets/clientes/cliente_2.jpg" alt="agente2" />
+                        <h4>Martín P.</h4>
+                        <p>"¡Increíbles sabores! Cada bocado fue una experiencia. Recomendado 100%"".</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="cliente-testimonio">
+                        <img src="/assets/clientes/cliente_3.jpg" alt="agente3" />
+                        <h4>Sofía L.</h4>
+                        <p>"Perfectas para cumpleaños. A todos les encantó, especialmente el relleno".</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="cliente-testimonio">
+                        <img src="/assets/clientes/cliente_4.jpg" alt="agente4" />
+                        <h4>Joaquín T.</h4>
+                        <p>"Se nota el cariño en cada pastel. Textura suave y decorado hermoso".</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="cliente-testimonio">
+                        <img src="/assets/clientes/cliente_5.jpg" alt="agente5" />
+                        <h4>Valentina M.</h4>
+                        <p>"Delicioso y artesanal. ¡Ya quiero encargar otra torta!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <section class="ubicacion">
+        <div class="ubicacion_mapa">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4161.797803301669!2d-71.53153602345975!3d-32.795077264250914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689c056e22f02db%3A0xd8adccdbfef957a4!2sSalas%20398%2C%202490651%20Quintero%2C%20Valpara%C3%ADso!5e1!3m2!1ses-419!2scl!4v1745978037371!5m2!1ses-419!2scl"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+    </section>
+
+    <section class="contacto">
+        <div class="contacto_contenedor">
+
+        </div>
+
+        <div class="formulario_contacto" id="contacto">
+            <div class="informacion_contacto">
+                <h3>Contactanos</h3>
+                <p><i class="fa-solid fa-location-dot"></i>costanera 1530</p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>claudiosantander1990@gmail.com
+                </p>
+                <p><i class="fa-solid fa-phone"></i>+569 6879 8978</p>
+                <div class="redes_sociales">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                </div>
+            </div>
+
+            <form class="formulario">
+                <div class="input_formulario">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" placeholder="Claudio" id="nombre" />
+                </div>
+                <div class="input_formulario">
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" placeholder="Santander" id="apellido" />
+                </div>
+                <div class="input_formulario">
+                    <label for="correo">Correo</label>
+                    <input type="email" placeholder="ejemplo@ejemplño.com" id="correo" />
+                </div>
+                <div class="input_formulario">
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" placeholder="+569 7989 6978" id="telefono" />
+                </div>
+                <div class="input_formulario">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea></textarea>
+                </div>
+                <div class="input_formulario">
+                    <button type="submit" class="btn_enviar">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <button class="btn_flotante" id="btn_arriba">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+
+
+        <script src="app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
